@@ -1,9 +1,14 @@
 <template>
 
+    <div class="flex flex-col">
   <div class="flex flex-row gap-4 p-4 justify-center z-10">
     
-    <div v-if="open_modal">
-        <AddSong @close="open_modal=false" @add="addSong" :folder="active_folder" />
+    <div v-if="open_song_modal">
+        <AddSong @close="open_song_modal=false" @add="addSong" :folder="active_folder" />
+    </div>
+
+    <div v-if="open_folder_modal">
+        <AddFolder @close="open_folder_modal=false"/>
     </div>
     <div class="flex flex-col gap-0.5 hover:cursor-pointer" v-for="folder in folders" >
         <h1 @click="open_close_folder(folder)">
@@ -20,14 +25,17 @@
     ></iframe>
     <div v-else>Folder empty</div>
     </div>
-        <button class="hover:cursor-pointer" @click="openModal(folder)">Add to folder</button>
+        <button class="hover:cursor-pointer" @click="openSongModal(folder)">Add to folder</button>
     </div>
+  </div>
+    <button class="justify-center" @click="openFolderModal()">Add Folder</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import AddSong from '../components/AddSong.vue';
+import AddFolder from '../components/AddFolder.vue';
 
 const folders = ref([
     {name: "Left",
@@ -45,14 +53,22 @@ const folders = ref([
     },
 ])
 
-let open_modal = ref(false)
+let open_song_modal = ref(false)
+let open_folder_modal = ref(false)
+
 let active_folder = ref(null)
 
-function openModal(folder) {
+function openSongModal(folder) {
     
-    open_modal.value = true
+    open_song_modal.value = true
     active_folder.value = folder
-    console.log("open modal is " + open_modal)
+    console.log("open modal is " + open_song_modal)
+}
+
+function openFolderModal() {
+    
+    open_folder_modal.value = true
+    console.log("open modal is " + open_song_modal)
 }
 
 function open_close_folder(folder){
