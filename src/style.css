@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "PrintedCircuitBoard";
+  src: url("/fonts/PrintedCircuitBoard.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer utilities {
+  .font-pcb {
+    font-family: "PrintedCircuitBoard", monospace;
+  }
+}
+
+/* Text outline */
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1.5px black; /* thickness + color */
+   
+  }
+}
