@@ -1,15 +1,16 @@
-<script setup>
-import Navbar from "./components/Navbar.vue"
-</script>
-
 <template>
-  <div class="min-h-screen bg-gray-300">
-
+  <div class="min-h-screen bg-gray-200">
     <Navbar />
-
-    <main class="p-6">
-      
-    </main>
-
+    <router-view />
   </div>
 </template>
+
+<script>
+import Navbar from "./components/Navbar.vue"; // <-- path must be correct
+
+export default {
+  components: {
+    Navbar,
+  },
+};
+</script>
