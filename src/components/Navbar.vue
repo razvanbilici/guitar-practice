@@ -11,7 +11,7 @@
 
     <div class="flex flex-1 justify-end space-x-[4vw] text-outline font-pcb 
                  text-white">
-      <RouterLink to="/songs" class="hover:scale-110 transition-transform cursor-pointer">Songs</RouterLink>
+      <RouterLink to="/practice" class="hover:scale-110 transition-transform cursor-pointer">Practice</RouterLink>
       <RouterLink to="/theory" class="hover:scale-110 transition-transform cursor-pointer">Theory</RouterLink>
       <RouterLink to="/progress" class="hover:scale-110 transition-transform cursor-pointer">Progress</RouterLink>
     </div>

@@ -4,7 +4,7 @@
     <div class="bg-white p-8 rounded-2xl shadow-2xl w-[90vw] max-w-md flex flex-col gap-6">
       
       <div class="flex flex-col gap-1">
-        <h2 class="text-2xl font-bold text-gray-800">Add to {{ folder.name }}</h2>
+        <h2 class="text-2xl font-bold text-gray-800">Add to {{ playlist.name }}</h2>
         <p class="text-gray-500 text-sm">Paste a YouTube link or ID below.</p>
       </div>
 
@@ -49,7 +49,7 @@ import {ref} from "vue"
 
 const url = ref("")
 const props = defineProps({
-  folder: Object
+  playlist: Object
 })
 
 // Define the events this component can "emit"

@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col ml-4 text-[10vh] font-pcb">
+  <main class="flex flex-col ml-4 text-[10vh] font-pcb text-outline text-white">
 
     <div>
       <!-- Toggle -->

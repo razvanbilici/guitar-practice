@@ -6,9 +6,9 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
     {path: "/", name: "Home", component: () => import("../pages/Home.vue") },
-  { path: "/songs", name: "Songs", component: () => import("../pages/Songs.vue") },
+  { path: "/practice", name: "Practice", component: () => import("../pages/Practice.vue") },
   { path: "/theory", name: "Theory", component: () => import("../pages/Theory.vue") },
-  { path: "/progress", name: "Progress", component: () => import("../pages/Songs.vue") },
+  { path: "/progress", name: "Progress", component: () => import("../pages/Progress.vue") },
 
   {
     path: "/theory/scales/:key/:mode",

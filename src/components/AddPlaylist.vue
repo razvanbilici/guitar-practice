@@ -26,10 +26,10 @@
           
           <button 
             type="submit"
-            @click="addFolder"
+            @click="addPlaylist"
             class="flex-1 px-4 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-200 active:scale-95 transition-all"
           >
-            Add Folder
+            Add playlist
           </button>
         </div>
       </form>
@@ -44,7 +44,7 @@ import {ref} from "vue"
 
 const url = ref("")
 const props = defineProps({
-  folder_list: Object
+  playlyst_array: Object
 })
 
 // Define the events this component can "emit"
@@ -54,7 +54,7 @@ const closeModal = () => {
   emit('close') // Shouting "close!" to the parent
 }
 
-const addFolder = () => {
+const addPlaylist = () => {
   emit('add', url.value)
   console.log(url.value)
   closeModal() 
