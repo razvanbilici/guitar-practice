@@ -6,11 +6,11 @@
       <form @submit.prevent="handleSubmit" class="flex flex-col gap-4">
         <div class="flex flex-col gap-2">
           <label class="text-xs font-semibold uppercase tracking-wider text-gray-400 ml-1">
-            YouTube Link
+            Playlist Name
           </label>
-          <input v-model="url" 
+          <input v-model="name" 
             type="text" 
-            placeholder="e.g. dQw4w9WgXcQ"
+            placeholder="e.g. Left-Hand Warmup"
             class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all text-gray-700 bg-gray-50"
           />
         </div>
@@ -19,7 +19,7 @@
           <button 
             type="button"
             @click="closeModal"
-            class="flex-1 px-4 py-3 rounded-xl font-semibold text-gray-600 hover:bg-gray-100 transition-colors"
+            class="flex-1 px-4 py-3 rounded-xl font-semibold hover:bg-red-700 bg-red-600 text-white shadow-red-600 active:scale-95 transition-all cursor-pointer"
           >
             Cancel
           </button>
@@ -27,7 +27,7 @@
           <button 
             type="submit"
             @click="addPlaylist"
-            class="flex-1 px-4 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-200 active:scale-95 transition-all"
+            class="flex-1 px-4 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-400 active:scale-95 transition-all cursor-pointer"
           >
             Add playlist
           </button>
@@ -42,7 +42,7 @@
 
 import {ref} from "vue"
 
-const url = ref("")
+const name = ref("")
 const props = defineProps({
   playlyst_array: Object
 })
@@ -55,8 +55,8 @@ const closeModal = () => {
 }
 
 const addPlaylist = () => {
-  emit('add', url.value)
-  console.log(url.value)
+  emit('add', name.value)
+  console.log(name.value)
   closeModal() 
 }
 </script>

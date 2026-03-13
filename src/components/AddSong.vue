@@ -1,7 +1,7 @@
 <template>
   <div class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-100">
     
-    <div class="bg-white p-8 rounded-2xl shadow-2xl w-[90vw] max-w-md flex flex-col gap-6">
+    <div class="bg-white p-8 rounded-2xl shadow-2xl w-[40vw] flex flex-col gap-6">
       
       <div class="flex flex-col gap-1">
         <h2 class="text-2xl font-bold text-gray-800">Add to {{ playlist.name }}</h2>
@@ -15,7 +15,7 @@
           </label>
           <input v-model="url" 
             type="text" 
-            placeholder="e.g. dQw4w9WgXcQ"
+            placeholder="e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all text-gray-700 bg-gray-50"
           />
         </div>
@@ -59,9 +59,24 @@ const closeModal = () => {
   emit('close') // Shouting "close!" to the parent
 }
 
+function validURL(url) {
+  const match = url.match(
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+  );
+
+  return match ? match[1] : null;
+}
+
 const addSong = () => {
-  emit('add', url.value)
-  console.log(url.value)
+
+  const video_id = validURL(url.value)
+  if (video_id == null){
+    alert("Not a valid URL!")
+    return
+  }
+
+  emit('add', video_id)
+  console.log(video_id)
   closeModal() 
 }
 </script>

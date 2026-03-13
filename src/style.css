@@ -16,7 +16,18 @@
 /* Text outline */
 @layer utilities {
   .text-outline {
-    -webkit-text-stroke: 1.5px black; /* thickness + color */
+    -webkit-text-stroke: 1.3px black; /* thickness + color */
    
   }
+}
+
+@layer utilities {
+  .text-outline-small {
+    -webkit-text-stroke: 0.8px black; /* thickness + color */
+   
+  }
+}
+
+@theme {
+  --color-primary: red;
 }
