@@ -1,4 +1,1 @@
-<template>
-
-<div>Progress Page</div>
-</template>
+<template></template>

@@ -1,14 +1,18 @@
 <template>
-  <main class="flex flex-col ml-4 text-[10vh] font-pcb text-outline text-white">
+  <main class="flex flex-col ml-4 text-[10vh] text-yellow-500">
 
     <div>
       <!-- Toggle -->
+       <div class="flex flex-row items-center gap-2 cursor-pointer w-fit " @click="open_scales_panel = !open_scales_panel">
       <span
-        class="cursor-pointer"
-        @click="open_scales_panel = !open_scales_panel"
+        class="font-pcb text-outline hover:text-gray-200 transition-all duration-300 ease-in-out"
       >
         Scales
       </span>
+      <p class="text-sm text-gray-400">
+  {{ open_scales_panel ? 'click to collapse' : 'click to expand' }}
+</p>
+      </div>
 
       <!-- Transition Wrapper -->
       <Transition
@@ -29,7 +33,7 @@
             :key="scale.key"
             class="flex flex-col"
           >
-            <span>{{ scale.key }}</span>
+            <span class="font-extrabold text-outline">{{ scale.key }}</span>
 
             <div class="flex flex-row gap-x-3">
 
@@ -37,13 +41,13 @@
               <div
                 v-for="mode in scale.modes"
                 :key="mode.name"
-                class="flex flex-col m-4 p-4 bg-amber-500
+                class="flex flex-col m-4 p-4 bg-yellow-500 text-white
                        w-[50vh] shadow-2xl rounded-xl
-                       hover:scale-105 transition"
+                       hover:scale-105 transition-all font-extrabold text-outline"
               >
                 <span>{{ mode.name }}</span>
 
-                <p class="text-[5vh]">
+                <p class="text-[3vh] font-light">
                   {{ mode.desc }}
                 </p>
 
