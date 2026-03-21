@@ -6,31 +6,16 @@ const props = defineProps({
   playlist: Object,
 });
 
-// Define the events this component can "emit"
-const emit = defineEmits(["close", "add"]);
+const emit = defineEmits(["close_modal", "add_song"]);
 
 const closeModal = () => {
-  emit("close"); // Shouting "close!" to the parent
+  emit("close_modal"); // Shouting "close!" to the parent
 };
 
-function validURL(url) {
-  const match = url.match(
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
-  );
-
-  return match ? match[1] : null;
-}
 
 function addSong() {
-  const songID = validURL(url.value);
 
-  if (songID == null) {
-    alert("Not a valid URL!");
-    return;
-  }
-
-  emit("add", songID);
-  closeModal();
+  emit("add_song", url.value);
 }
 </script>
 <template>
