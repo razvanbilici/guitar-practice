@@ -1,32 +1,12 @@
 
 export async function fetchPlaylists() {
 
-    // Mock data until I decide what DB I will use
-  // simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 300))
+  const response = await fetch("/playlists.json");
+  const data = await response.json(); 
 
-  return [
-    {
-        id: 1,
-        name: "Metal",
-        songs: [{id: 15, url: "dQw4w9WgXcQ"}, {id: 25, url: "kl5T4kHxmGM"}, 
-          {id: 215, url: "CBYHwZcbD"}, {id: 13, url: "i_74QMvvM_o"}],
-        open: false,
-    },
+  // console.log("heres the data", data.playlists);
 
-    { 
-        id: 2,  
-        name: "Practice",
-        songs: [],
-        open: false,
-    },
-    {
-        id: 3,
-        name: "Favorites",
-        songs: [{id: 153, url: "abc123xyz89"}],
-        open: false,
-    }
-  ]
+  return data.playlists
 }
 
 export async function addToPlaylist(playlist, song) {

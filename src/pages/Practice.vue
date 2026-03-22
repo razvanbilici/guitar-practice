@@ -25,7 +25,7 @@ function addNewPlaylist(playlist_title){
     }
 
   const new_playlist = {
-        id: 11,
+        id: Math.random(),
         name: playlist_title,
         songs: [],
         open: false,
@@ -47,7 +47,6 @@ function addSongToPlaylist(_url){
   open_song_modal.value = false
 
 }
-
 
 </script>
 
