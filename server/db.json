@@ -1,0 +1,26 @@
+{
+  "playlists": [
+    {
+      "id": 1,
+      "name": "Medsazzzz",
+      "songs": [
+        {
+          "id": 15,
+          "url": "dQw4w9WgXcQ"
+        },
+        {
+          "id": 0.6194274680054774,
+          "url": "CBYHwZcbD-s"
+        },
+        {
+          "id": 0.8279530273246728,
+          "url": "CBYHwZcbD-s"
+        },
+        {
+          "id": 0.4157414684994162,
+          "url": "CBYHwZcbD-s"
+        }
+      ]
+    }
+  ]
+}
