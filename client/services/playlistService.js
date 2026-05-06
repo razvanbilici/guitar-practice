@@ -1,7 +1,7 @@
 
 export async function fetchPlaylists() {
 
-  console.log("awaiting data")
+  // console.log("awaiting data")
 
   const response = await fetch("http://localhost:3000/playlists");
   const data = await response.json(); 
@@ -12,9 +12,6 @@ export async function fetchPlaylists() {
 export async function addToPlaylist(playlist, song) {
   playlist.value.songs.push(song);
   playlist.value.open = true;
-
-  console.log(song)
-  alert("baaaaa")
 
   await fetch(`http://localhost:3000/playlists/${playlist.value.id}/songs`, {
     method: "POST",
